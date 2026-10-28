@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TriageOps - SOC Incident Report</title>
+</head>
+<body style="background:#020617;color:#f8fafc;font-family:Segoe UI,sans-serif;padding:30px;">
+    <div style="max-width:850px;margin:auto;background:#1e293b;padding:25px;border-radius:12px;border:2px solid #d97706;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h1 style="margin:0;font-size:22px;color:#38bdf8;">TriageOps &mdash; SOC Incident Analysis</h1>
+            <span style="font-size:12px;color:#94a3b8;background:#0f172a;padding:5px 10px;border-radius:4px;">SIEM Ingest: Ready</span>
+        </div>
+        
+        <div style="padding:15px;background:#0f172a;border-radius:8px;margin:15px 0;">
+            <p style="margin:5px 0;"><b>Verdict:</b> <span style="color:#d97706;font-weight:bold;">SUSPICIOUS (Review Needed)</span></p>
+            <p style="margin:5px 0;"><b>Risk Score:</b> 35 / 100</p>
+            <p style="margin:5px 0;"><b>Recommended Action:</b> <u>Check Parent Process Lineage & User Baseline</u></p>
+        </div>
+        
+        <div style="margin-top:15px;padding:15px;background:#0f172a;border-radius:6px;">
+            <b style="color:#94a3b8;">Original Telemetry Command:</b>
+            <pre style="color:#e2e8f0;white-space:pre-wrap;margin-top:5px;">schtasks /create /tn 'Updater' /tr 'cmd.exe' /sc onlogon</pre>
+        </div>
+
+        
+
+        <h3 style="margin-top:25px;color:#cbd5e1;">Detected Behaviors & MITRE ATT&CK Mapping</h3>
+        <table style="width:100%;border-collapse:collapse;background:#0f172a;border-radius:6px;overflow:hidden;">
+            <thead>
+                <tr style="background:#334155;text-align:left;">
+                    <th style="padding:10px;color:#f8fafc;">Category</th>
+                    <th style="padding:10px;color:#f8fafc;">Technique</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td style='padding:10px;border-bottom:1px solid #334155;color:#38bdf8;'>Persistence (Scheduled Task)</td><td style='padding:10px;border-bottom:1px solid #334155;color:#e879f9;'>T1053.005 - Scheduled Task/Job: Scheduled Task</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
